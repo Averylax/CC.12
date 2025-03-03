@@ -5,7 +5,7 @@ function createMetricCard(id, title, initialValue) {
     let card = document.createElement("div");
     card.setAttribute("class","metric-card"); 
     card.setAttribute("id",id); 
-    card.innerHTML = `<h3>${title}</h3><p>$${initvalue}</p>`; 
+    card.innerHTML = `<h3>${title}</h3><p>$${initialvalue}</p>`; 
     dashboard.appendChild(card); 
 };
 
