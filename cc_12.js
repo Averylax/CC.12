@@ -24,3 +24,36 @@ metricCardArray.forEach(card => {
 });
 // Task 2 - Updated Metric Via Array Conversion
 
+const inventoryList = document.getElementById("inventoryList");
+
+function addInventoryItem(product) { 
+    let newLi = document.createElement("li");
+    newLi.setAttribute("class","product-item"); 
+    newLi.setAttribute("dataset",product);
+    newLi.addEventListener("click", () => {removeInventoryItem(newLi)});
+    newLi.textContent = product;
+    inventoryList.appendChild(newLi); 
+};
+
+addInventoryItem("Click me");
+addInventoryItem("Add a product below");
+
+let productForm = document.getElementById('productForm');
+let error = document.getElementById('error');
+
+productForm.addEventListener('submit', (event) => {
+    let productName = document.getElementById('productName').value; 
+    if (productName.trim() === '') { 
+        error.textContent = 'Product name is required'; 
+        event.preventDefault(); 
+    } else {
+        error.textContent = '';
+        addInventoryItem(productName); 
+        event.preventDefault(); 
+    }
+});
+
+function removeInventoryItem(item) { 
+    inventoryList.removeChild(item); 
+};
+// Task 3 - Implemented Dynamic Inventory List
