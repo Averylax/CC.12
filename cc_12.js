@@ -57,3 +57,18 @@ function removeInventoryItem(item) {
     inventoryList.removeChild(item); 
 };
 // Task 3 - Implemented Dynamic Inventory List
+
+const customerCards = document.querySelectorAll(".customer-card"); 
+const customerSection = document.getElementById("customerSection"); 
+
+customerCards.forEach(card => { 
+    card.addEventListener("click", (event) => { 
+        console.log(`User clicked ${event.target.textContent}`);
+        event.stopPropagation(); 
+    });    
+});
+
+customerSection.addEventListener("click", () => { 
+    console.log(`User clicked customerSection`); 
+});    
+// Task 4 - Demonstrated Event Bubbling in Customer Section

@@ -8,54 +8,56 @@
     </head>
 
     <style>
-        metric-card {
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 16px;
-            width: 150px;
-            text-align: center;
+        body {
             font-family: Arial, sans-serif;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-            margin: 10px;
-            background-color: #f9f9f9;
-            }
-          
-        #dashboard {
-            display: flex; 
-            gap: 10px;
+            margin: 20px;
             padding: 20px;
         }
-        
-        product-item {
-            cursor: pointer;
-            padding: 5px;
-            border-bottom: 1px solid #ccc;
-        }
-
-        customer-card {
-            padding: 10px;
-            background-color: #eee;
-            margin: 5px;
-            cursor: pointer;
-        }
+            .metric-card {
+                padding: 10px;
+                margin: 10px;
+                background-color: lightgray;
+                border-radius: 5px;
+                display: inline-block;
+            }
+                .product-item {
+                    cursor: pointer;
+                    color: blue;
+                }
+                    .customer-card {
+                        padding: 10px;
+                        margin: 5px;
+                        background-color: lightblue;
+                        border-radius: 5px;
+                        cursor: pointer;
+                    }
+                        #dashboard, #inventoryList, #customerSection {
+                            margin-bottom: 20px;
+                        }
     </style>
 
 <body>
+    <h1>Interactive Business Dashboard</h1>
 
-    <div id="dashboard"></div>
+    <h2>Dashboard Metrics</h2>
+        <div id="dashboard"></div>
 
     <h2>Inventory List</h2>
-    <ul id="inventoryList"></ul>
-    <button id="addProductButton">Add Product</button>
+        <ul id="inventoryList"></ul>
+            <form id="productForm">
+                <input type="text" id="productName" placeholder="Product Name" required>
+                <button type="submit">Add Product</button>
+                <div id="error"></div>
+            </form>
 
     <h2>Customer Section</h2>
-    <div id="customerSection">
-        <div class="customer-card">Customer 1</div>
-        <div class="customer-card">Customer 2</div>
-        <div class="customer-card">Customer 3</div>
-    </div>
-    
+        <div id="customerSection">
+            <div class="customer-card">Customer Barry</div>
+            <div class="customer-card">Customer Bee</div>
+            <div class="customer-card">Customer Bensen</div>
+        </div>
+
     <script src="cc_12.js"></script>
-    
+
 </body>
 </html>
