@@ -1,22 +1,13 @@
-const dashboard1 = document.getElementById("dashboard");
-const dashboard2 = document.querySelector("#dashboard");
+const dashboard = document.getElementById("dashboard");
+const dashboardSelector = document.querySelector("#dashboard");
 
-// Ensure the dashboard exists
-if (dashboard1 && dashboard2) {
-    // Create a new div element for the metric card
-    const revenueCard = document.createElement("div");
+function createMetricCard(id, title, initialValue) {
+    let card = document.createElement("div");
+    card.setAttribute("class","metric-card"); 
+    card.setAttribute("id",id); 
+    card.innerHTML = `<h3>${title}</h3><p>$${initvalue}</p>`; 
+    dashboard.appendChild(card); 
+};
 
-    // Set class and id attributes
-    revenueCard.setAttribute("class", "metric-card");
-    revenueCard.setAttribute("id", "revenueCard");
-
-    // Populate the card with a title and a placeholder value
-    revenueCard.innerHTML = `
-        <h3>Revenue</h3>
-        <p>$0</p>
-    `;
-
-    // Append the new metric card to the dashboard
-    dashboard1.appendChild(revenueCard);
-}
+createMetricCard("revenueCard", "Revenue", 0); //Invoking our createMetricCard() for the Revenue Card
 // Task 1 - Created Revenue Metric Card
